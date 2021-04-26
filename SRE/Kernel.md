@@ -1,3 +1,3 @@
 # **Kernel**
 
-![p1](https://i.imgur.com/T1Z6NPT.png)
+![p1](https://i.imgur.com/AtWq2d6.png)
