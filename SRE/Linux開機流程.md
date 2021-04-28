@@ -100,8 +100,9 @@ BIOS 在 MBR 中啟動名稱為 boot.img 的 loader
 - 將 initrd/initramfs 載入記憶體，並將其位址傳給 Kernel  
 - 將控制權交給 Kernel  
 
-## Kernel  
+## Kernel
 - 當Kernel初始化時,會檢查I/O裝置(cpu,ram,人機介面)跟bios類似  
+- initRAM -> (/proc,/dev)
 - init在任何linux都是壓縮過的檔案
 - 解壓縮init到記憶體裡面(記憶體讀取比硬碟快)讀取initrd  
 
