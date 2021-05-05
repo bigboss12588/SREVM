@@ -2,16 +2,16 @@
 
 ![p1](https://i.imgur.com/1bNWVLb.png)
 
-Opercation(軟體) Container(貨櫃)就是把program 隔離變成一台電腦
+Opercation(軟體) Container(貨櫃)就是把program 隔離變成一台電腦  
 (Oprecation Container沒有開機程序,因為共用kernel)
 
-isolated = 隔離
-APP = program
-/bins/libs :
+isolated = 隔離  
+APP = program  
+/bins/libs :  
 相依檔
-.so (system object)
-.ko (kernel object)
-Host OS (Kernel)
+.so (system object)  
+.ko (kernel object)  
+Host OS (Kernel)  
 
 ## **1. Namespace**
 
@@ -28,7 +28,7 @@ uts : 電腦名稱
 
 ![p2](https://i.imgur.com/5urRQ3Y.png)
 
-* ps命令還是會看到bigred主機的所有的Process資訊,這是因爲ps命令會讀取bigred主機的/proc目錄資訊
+* ps命令還是會看到bigred主機的所有的Process資訊,這是因爲ps命令會讀取bigred主機的/proc目錄資訊  
 (ps命令一定讀取/proc目錄資訊,因為此時/proc還在bigred裡)
 
 `exit` (退出container)
@@ -52,6 +52,11 @@ uts : 電腦名稱
 ![p4](https://i.imgur.com/UqvNvfp.png)
 
 ## **2. slirp4netns**
+
+![pp](https://i.imgur.com/y5tjOq9.png)
+
+Container撥給slip4(中華電信)再透過internet上網
+
 
 `sudo unshare --pid --fork --mount-proc --net --uts sh`
 
