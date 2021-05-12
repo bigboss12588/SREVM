@@ -105,7 +105,8 @@ Container撥給slip4(中華電信)再透過internet上網
 
 `sudo mount -t overlay overlay -o lowerdir=/home/bigred/lower,upperdir=/home/bigred/upper,workdir=/home/bigred/work  /home/bigred/merged`
 
-當你對merged裡做事時,事實上是在upper進行,當upper和lower都由一個共同檔案時,看到的是在upper的檔案
+
+merged只是用來掛載(mount)overlay2的資料夾,當你對merged裡做事時,事實上是在overlay2進行,當upper和lower都由一個共同檔案時,看到的是在upper的檔案
 
 ![p12](https://i.imgur.com/Z53BJXN.jpg)
 
