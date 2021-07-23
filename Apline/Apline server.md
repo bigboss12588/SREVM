@@ -67,3 +67,43 @@
 ![16](https://i.imgur.com/POp9w67.png)
 * 安裝至硬碟後須重新開機，並退出iso
 * 輸入:reboot
+
+第一步
+安裝所需套件
+
+`$ apk update`
+
+`$ apk upgrade`
+
+`$ apk add tree nano sudo unzip curl wget zip grep bash procps`
+(以及一切你想加入的配件)
+
+`$ tree /home/`
+(確認是否安裝成功)
+
+第二步
+
+建立與設定 管理者 帳號
+
+`$ adduser -s /bin/bash -h /home/bigred -D bigred`  
+(建立 bigred 管理者帳號，並讓他操作時使用bash，並建立 bigred 群組)
+
+`$ addgroup bigred wheel`  
+(將管理者號加入 wheel 群組) (wheel 群組為擁有 sudo 權限的群組)
+
+`$ echo -e "bigred\nbigred\n"|passwd bigred`  
+(設定管理者密碼)
+
+`$ nano /etc/sudoers`  
+(編輯 sudoers 文件並將下面這行加入進去，可達成 wheel 群組使用 sudo 時不用輸入密碼)
+
+% wheel ALL=(ALL) NOPASSWD: ALL  
+(這行打錯就要全部重來了)
+
+`$ sudo passwd -dl root`  
+(取消 root 帳號)
+
+`$ nano /etc/hosts`  
+(修改電腦名稱)
+
+完成設定之後，記得重新開機
